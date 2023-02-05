@@ -11,11 +11,12 @@ public class OptimisedSolution {
         Set<Integer> set = new HashSet<>();
 
         int sum = 0;
+        int k =2;
         boolean isFound = false;
         for(int element: ar) {
             sum = sum + element;
             set.add(sum);
-            if (set.contains(sum)) {
+            if (set.contains(sum-k)) {
                 isFound = true;
                 break;
             }
