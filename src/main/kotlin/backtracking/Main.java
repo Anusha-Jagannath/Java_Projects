@@ -10,18 +10,28 @@ public class Main {
                 {1, 1, 0, 0, 0, 1, 0, 0, 1},
                 {1, 1, 0, 0, 0, 1, 0, 0, 1},
                 {1, 1, 0, 0, 0, 1, 0, 0, 1}};
+        int rows = arr.length;
+        int cols = arr[0].length;
+        boolean isVisited[][] = new boolean[rows][cols];
+        int result = shortestPath(arr,0,0,3,4,isVisited);
+        if (result >= 1000000) {
+            System.out.println(result);
+        } else {
+            System.out.println("Not found");
+        }
     }
 
-    private static void shortestPath(int a[][], int i, int j, int x, int y) {
+    private static int shortestPath(int a[][], int i, int j, int x, int y) {
         int rows = a.length;
         int cols = a[0].length;
 
         boolean visited[][] = new boolean[rows][cols];
+
         return shortestPath(a, i, j, x, y,visited);
 
     }
 
-    static boolean isValid(int a[][], int i, int j, boolean vis[][]) {
+    static boolean isValid(int a[][], int i, int j,boolean vis[][]) {
         int rows = a.length;
         int cols = a[0].length;
         return i >= 0 && j >= 0 && i < rows && j < cols && a[i][j] == 1 && !vis[i][j];
