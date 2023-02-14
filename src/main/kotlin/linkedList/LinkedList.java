@@ -1,28 +1,28 @@
 package linkedList;
 
 
-class Node {
+class Node<E> {
 
-    int data;
+    E data;
     Node link;
 
-    public Node(int data) {
+    public Node(E data) {
         this.data = data;
         this.link = null;
     }
 }
-public class LinkedList {
+public class LinkedList<E> {
 
-    Node head = null;
+    Node<E> head = null;
 
-    private void addTo(int element) {
-        Node newNode = new Node(element);
+    private void addTo(E element) {
+        Node<E> newNode = new Node<E>(element);
 
         if (head == null) {
             head = newNode;
         } else {
 
-            Node temp;
+            Node<E> temp;
             temp = head;
 
             while (temp.link != null) {
@@ -54,7 +54,7 @@ public class LinkedList {
             System.out.println("Linked list is empty");
         } else {
 
-            Node temp = head;
+            Node<E> temp = head;
 
             while (temp != null) {
                 System.out.println(temp.data);
@@ -64,7 +64,7 @@ public class LinkedList {
     }
     public static void main(String args[]) {
 
-        LinkedList ll = new LinkedList();
+        LinkedList<Integer> ll = new LinkedList<Integer>();
         for(int i=0;i<10;i++) {
             ll.addTo(i);
         }
